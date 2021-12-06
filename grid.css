@@ -1,0 +1,84 @@
+.container > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  color: green;
+}
+
+html, body {
+  box-sizing: border-box;
+  background-color: blue;
+  height: 100%;
+  padding: 1px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.container > div:nth-child(1n) {
+  background-color: lightblue;
+}
+
+.container > div:nth-child(3n) {
+  background-color: lightblue;
+}
+
+.container > div:nth-child(2n) {
+  background-color: lightblue;
+}
+
+.container > div:nth-child(4n) {
+  background-color: lightblue;
+}
+
+
+.container {
+      height: 50%;
+      display: grid;
+      grid-gap: 20px;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: 40px auto 40px;
+      grid-template-areas:
+                      "h h h h h h h h h h h h"
+                      "m m m m m m m m m m m m"
+                      "r r r r r r r r r r r r"
+                      "c c c c c c c c c c c c"
+                      "f f f f f f f f f f f f"
+}
+.header {
+    grid-area: h;
+}
+
+.menu { grid-area: m;
+}
+
+.right {
+    grid-area: r;
+}
+
+.content {
+    grid-area: c;
+}
+
+.footer {
+    grid-area: f;
+}
+
+@media screen and (min-width: 550px) {
+
+html,body{
+    height: 100%
+}
+
+.container {
+    height: 100%;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 100px auto 100px;
+    grid-template-areas:
+                    "h h h h h h h h h h h h"
+                    "m c c c c c c c c c c r"
+                    "f f f f f f f f f f f f"
+  }
+}
